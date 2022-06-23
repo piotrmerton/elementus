@@ -1,0 +1,150 @@
+.nav--top {
+	
+	@media all and (max-width: $breakpoint_mobile) {
+
+		width: 100%;	
+
+		&:not(.open) {
+			display: none;
+		}
+
+
+	}
+
+	@media all and (max-width: $breakpoint_mobile) and (min-width: $breakpoint_tablet-portrait) {
+		.nav__layout {
+			padding: 2rem 0 3rem;
+		}
+	}
+
+	@media all and (max-width: $breakpoint_tablet-portrait - 1px) {
+		
+		position: fixed;
+		height: 100%;
+		padding: 0 1rem;
+		background: #2c2249;
+		z-index: 98;
+		top: 0;
+		left: 0;
+		width: 100%;		
+
+
+		.nav__layout {
+			@media all and (min-height: 361px) {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);				
+			}
+			@media all and (max-height: 360px) {
+				padding-top: 4.5rem;
+			}
+
+		}
+
+	}
+
+}
+
+.nav__menu {
+	a {
+		display: block;
+		text-transform: uppercase;
+		letter-spacing: .05em;
+	}
+
+	@media all and (min-width: $breakpoint_mobile + 1px) {
+		
+		display: flex;
+		align-items: center;
+
+		.menu__item {
+			&.item--current {
+				a {
+					color: $orange;
+				}
+			}
+		}
+
+		a {			
+			
+			@media all and (min-width: $breakpoint_tablet + 1px) {
+				&:hover {
+					color: $orange;				
+				}
+			}
+			
+		}
+
+		
+		> li {
+			display: inline-block;
+
+			&:not(:last-child) {
+				margin-right: 16px;
+				@media all and (min-width: $breakpoint_desktop + 1px) {
+					margin-right: 2rem;
+				}
+			}
+		}
+	
+
+	}
+
+	@media all and (min-width: $breakpoint_tablet-portrait) {
+		a {
+			font-size: .875em;
+		}
+	}
+
+	@media all and (max-width: $breakpoint_mobile) {
+
+		> li {
+			> a {
+				padding: .25rem 0;
+				@media all and (min-height: 480px) {
+					padding: 1rem 0;
+				} 
+			}
+		}
+		
+
+	}
+}
+
+
+.nav__contact {
+	display: flex;
+
+	position: absolute;
+	bottom: 2rem;
+	left: 0;
+
+	width: 100%;
+	padding: 0 1rem;
+	justify-content: space-between;
+	
+	a {
+		font-size: 1.25em;
+	}
+	.contact__list {
+		display: flex;
+		li {
+			&:not(:last-child) {
+				margin-right: 1rem;
+			}			
+		}
+	}
+	@media all and (min-width: $breakpoint_tablet-portrait) {
+		width: 45%;
+		right: 2rem;
+		left: auto;
+		bottom: 56px; //ugly magic number alignment with nav__layout...
+		a {
+			font-size: 1.125em
+		}
+	}	
+
+	@media all and (max-height: 320px) {
+		display: none;
+	}
+}

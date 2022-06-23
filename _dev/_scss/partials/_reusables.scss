@@ -1,0 +1,133 @@
+//utility classes, generic overrides or reusable patterns
+
+.hidden {
+	display: none;
+}
+
+//text related utilities moved to text.scss
+
+//banner cover, section cover
+
+.animation-wrapper {
+	position: relative;
+	//img for placeholder purposes
+	canvas,
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;	
+		object-fit: contain;
+	}
+
+	//break out of DOM and absolutely cover parent container
+	&.wrapper--cover {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;	
+		canvas,
+		img {
+			object-fit: cover;
+		}	
+	}
+
+	@media all and (min-width: $breakpoint_tablet-portrait) {
+		.animation--mobile {
+			display: none;
+		}
+	}
+	@media all and (max-width: $breakpoint_tablet-portrait - 1px) {
+		.animation--desktop {
+			display: none;
+		}
+	}
+
+}
+
+.stylized-number {
+	display: flex;
+	justify-content: flex-start; 
+	margin-bottom: 1.5rem;
+	span {
+		display: block;
+		height: 4.5rem;
+		width: 1px;
+		background: $navy;
+		margin-right: .5rem;
+	}
+	@media all and (max-width: $breakpoint_tablet) {
+		margin-bottom: 1rem;
+		span {
+			height: 2.25rem;
+			margin-right: .25rem;
+		}
+	}
+	&.number--purple {
+		span {
+			background: #ac8def;
+		}
+	}
+}
+
+//contact data for item--author (section/postmeta), item--member (section/team)
+.list--contact-data {
+	display: flex;
+	li {
+		&:not(:last-child) {
+			margin-right: 1rem;
+		}
+		.ico {
+			width: 1.5rem;
+			height: 1.5rem;
+		}
+	}
+}
+
+//generic inline svgs
+.svg-arrow {
+	max-width: 100%;
+	height: 100%;
+	max-height: 2rem;
+
+	&.arrow--white {
+		.ico--arrow {
+			stroke: $white;
+		}
+	}
+}
+.ico {
+	.svg-ico {
+		transition: all .2s ease-in-out;
+		&:not(.ico--arrow) {
+			fill: $navy;
+		}
+		&.ico--arrow {
+			stroke: $navy;
+		}
+	}
+	&.ico--white {
+		.svg-ico {
+			fill: $white;
+		}
+	}	
+}
+
+
+//if path is nested in a, change fill on hover (path need to have class .svg-ico in source)
+@media all and (min-width: $breakpoint_tablet + 1px) {
+	a {
+		&:hover {
+			.svg-ico {
+				&:not(.ico--arrow) {
+					fill: $orange;
+				}
+				&.ico--arrow {
+					stroke: $orange;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,31 @@
+.section-newsletter {
+	background: $navy;
+	@media all and (max-width: $breakpoint_mobile) and (min-width: $breakpoint_tablet-portrait)  {
+
+		//override for standard behavior (see form.scss)
+
+		form {
+			&.form--newsletter {
+				fieldset {
+					//not sure whether bug or "by design", but as of 12-2018 fieldset still, for some reason, can't be neither flex nor grid..
+					> div {
+						display: flex;
+					}
+				}
+				input {
+					border-right: 0;
+					border-bottom: 1px solid $white;
+				}			
+				button {
+					max-width: 9rem;
+				}				
+			}
+
+		}
+	}
+	@media all and (max-width: $breakpoint_mobile) {
+		.section__header {
+			margin: 0;
+		}
+	}
+}

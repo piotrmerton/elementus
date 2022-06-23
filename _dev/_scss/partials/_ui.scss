@@ -1,0 +1,67 @@
+/* UI (User Intefrace) */
+
+/* hamburger to x transformicon 
+ * source: https://codepen.io/designcouch/pen/Atyop 
+ */
+ .ui-nav {
+	display: block;
+	position: relative;
+	width: 72px;
+	height: 20px;
+
+	text-indent: -999em;
+	z-index: 999;
+
+	cursor: pointer;
+
+	span {
+		display: block;
+		position: absolute;
+		height: 2px;
+		width: 100%;
+		background: #87809a;
+		opacity: 1;
+		left: 0;
+		-webkit-transform: rotate(0deg);
+						transform: rotate(0deg);
+		-webkit-transition: .25s ease-in-out;
+						transition: .25s ease-in-out;       
+						
+		&:nth-child(1) {
+			top: 0px;
+		}  
+		&:nth-child(2),
+		&:nth-child(3) {
+			top: 8px;
+		}
+		&:nth-child(4) {
+			top: 16px;
+		}
+
+	}
+
+	&.open {
+
+		 span {
+
+				&:nth-child(1) {
+					 top: 10px;
+					 width: 0%;
+					 left: 50%;
+				}
+				&:nth-child(2) {
+					 -webkit-transform: rotate(20deg);
+									 transform: rotate(20deg);               
+				}
+				&:nth-child(3) {
+					 -webkit-transform: rotate(-20deg);
+									 transform: rotate(-20deg);               
+				}
+				&:nth-child(4) {
+					 top: 10px;
+					 width: 0%;
+					 left: 50%;               
+				}
+		 }
+	}
+}

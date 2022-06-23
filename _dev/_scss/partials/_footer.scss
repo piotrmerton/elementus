@@ -1,0 +1,47 @@
+@import '../sections/social';
+@import '../sections/contact';
+
+footer {
+	padding-bottom: 2rem;
+	@media all and (min-width: $breakpoint_mobile + 1px) {
+		padding-bottom: 3.75em;
+	}
+	background: $navy;
+
+	.footer__logo {
+		display: block;
+		width: 166px;
+		height: 24px;
+		.logo {
+			fill: $white;
+		}
+		@media all and(min-width: $breakpoint_tablet + 1px) {
+			&:hover {
+				.logo {
+					fill: $orange;
+				}
+			}
+		}	
+	}
+
+	@media all and (min-width: $breakpoint_tablet-portrait) and (max-width: $breakpoint_mobile) {
+		.section-copyrights {
+			.section__grid {
+				grid-template-columns: 1fr 1fr;
+			}
+		}
+	}
+
+	@media all and (max-width: $breakpoint_mobile) {
+		.footer__copyrights {
+			font-size: .875em;
+		}
+	}
+	@media all and (max-width: $breakpoint_tablet-portrait - 1px) {
+		.footer__logo {
+			display: none;
+		}
+	}
+}
+
+

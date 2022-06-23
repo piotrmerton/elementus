@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 320 320.006">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#1c142d"/>
+      <stop offset="1" stop-color="#2c2249"/>
+    </linearGradient>
+  </defs>
+  <g id="Symbol_4_1" data-name="Symbol 4 – 1" transform="translate(-20 -6518)">
+    <path id="Path_159" data-name="Path 159" class="cls-1" d="M164.733,533.768,4.733,432.5h320Z" transform="translate(15.267 6304.238)"/>
+    <path id="Path_160" data-name="Path 160" class="cls-1" d="M164.733,471.328,4.733,378.5h320Z" transform="translate(15.267 6330.896)"/>
+    <path id="Path_161" data-name="Path 161" class="cls-1" d="M164.733,408.89l-160-84.39h320Z" transform="translate(15.267 6357.554)"/>
+    <path id="Path_162" data-name="Path 162" class="cls-1" d="M164.733,346.451,4.733,270.5h320Z" transform="translate(15.267 6384.211)"/>
+    <path id="Path_163" data-name="Path 163" class="cls-1" d="M164.733,284.012,4.733,216.5h320Z" transform="translate(15.267 6410.869)"/>
+    <path id="Path_164" data-name="Path 164" class="cls-1" d="M164.733,221.573,4.733,162.5h320Z" transform="translate(15.267 6437.527)"/>
+    <path id="Path_165" data-name="Path 165" class="cls-1" d="M164.733,159.134,4.733,108.5h320Z" transform="translate(15.267 6464.185)"/>
+    <path id="Path_166" data-name="Path 166" class="cls-1" d="M164.733,96.695,4.733,54.5h320Z" transform="translate(15.267 6490.843)"/>
+    <path id="Path_167" data-name="Path 167" class="cls-1" d="M164.733,34.256,4.733.5h320Z" transform="translate(15.267 6517.5)"/>
+  </g>
+</svg>

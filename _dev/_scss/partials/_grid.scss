@@ -1,0 +1,53 @@
+
+
+.grid--viewport {
+
+	display: grid;
+	grid-template-columns: 1fr 1fr [viewport-start] repeat(12, 8.33333%) [viewport-end] 1fr 1fr;
+	grid-template-rows: auto;
+
+	@media all and (min-width: $viewport_width + 1px) {
+		grid-template-columns: 1fr 1fr [viewport-start] repeat(12, minmax(auto, $viewport_width/12)) [viewport-end] 1fr 1fr;
+	}
+}
+
+.grid--content {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    
+    @media all and (min-width: $viewport_width + 1px) {
+        grid-template-columns: repeat(12, minmax(auto, $viewport_width/12));
+    }    
+}
+
+.grid--two-columns {
+    display: grid;
+    grid-gap: 3rem 3rem;
+    @media all and (max-width: $breakpoint_mobile) {
+        grid-gap: 2rem 2rem;
+    }
+    @media all and (min-width: $breakpoint_mobile + 1px) {        
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+.grid--three-columns {
+    display: grid;
+    grid-gap: 2rem 2rem;
+    @media all and (min-width: $breakpoint_mobile + 1px) {        
+        grid-template-columns: repeat(3, 1fr); 
+        grid-gap: 3rem 3rem;
+    }
+}
+
+.grid--four-columns {
+    display: grid;
+    grid-gap: 3rem 3rem;
+    @media all and (max-width: $breakpoint_hd) {
+        grid-gap: 2rem 2rem;
+    }
+    @media all and (min-width: $breakpoint_mobile + 1px) {        
+        grid-template-columns: repeat(4, 1fr); 
+    }    
+}
+

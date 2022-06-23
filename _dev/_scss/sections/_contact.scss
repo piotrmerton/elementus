@@ -1,0 +1,50 @@
+.section-contact {
+	background: $navy;
+
+	.section__header {
+		margin: 0;
+		h4 {
+			margin-bottom: 2rem;
+		}
+		p {
+			font-size: 1.064em;
+			line-height: 1.42;
+		}
+	}
+
+	.contact__email {
+		display: inline-block;
+		font-size: 2.625em;
+		margin: 4rem 0;
+	}
+
+	@media all and (min-width: $breakpoint_tablet-portrait + 1px) {
+		.section__header {
+			p {
+				max-width: 24rem;
+			}
+		}
+	}
+
+
+	@media all and (min-width: $breakpoint_tablet-portrait) and (max-width: $breakpoint_mobile) {
+		.section__grid {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	@media all and (max-width: $breakpoint_mobile) {
+		.section__header {
+			p {
+				font-size: 1em;
+			}
+		}
+		.section__grid {
+			grid-row-gap: 4rem;
+		}
+		.contact__email {
+			font-size: 1.5em;
+			margin: 2rem 0 0;
+		}
+	}
+}

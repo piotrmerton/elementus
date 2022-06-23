@@ -1,0 +1,59 @@
+.banner {
+	display: flex;
+	align-items: center;
+	
+	position: relative;
+
+	min-height: 640px;
+
+
+
+	.banner__slogan {
+		width: 100%;
+		position: relative;
+		z-index: 2; //above banner__cover
+
+		h1 {
+			font-size: 2.625em;
+			margin-bottom: 4rem;
+			
+			@media all and (min-width: $breakpoint_mobile + 1px) {
+				line-height: 1.33;
+			}
+			@media all and (max-width: $breakpoint_mobile) {
+				font-size: 1.875em;
+				margin-bottom: 2rem;
+			}
+		}
+	}
+
+	//see utilities.scss
+	.banner__cover {
+
+	}
+
+
+	&.banner--home {
+		background: $navy;
+		@media all and (min-width: $breakpoint_tablet-portrait) {
+			min-height: 100vh;
+		}
+		.banner__cta {
+			width: 100%;
+			position: absolute;
+			bottom: 4rem;
+			z-index: 2;
+			.svg-arrow {
+				width: auto;
+				height: 7.5rem;
+				max-height: 100%;
+			}
+			@media all and (max-width: $breakpoint_tablet-portrait - 1px) {
+				bottom: 2rem;
+				.svg-arrow {
+					height: 5rem;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,58 @@
+.button {
+	font-family: $font_default;
+	font-size: .875em;
+
+	text-decoration: none;
+	text-transform: uppercase;
+
+	width: 100%;
+	max-width: 24rem;
+
+	height: 3.5rem;
+	letter-spacing: .005em;
+
+	display: flex;
+	align-items: center;
+	//justify-content: center;
+
+	cursor: pointer;
+
+	-webkit-appearance: none;
+
+	transition: all .2s ease-in-out;
+
+	//default
+	border: 1px solid #1C142D;
+	background: transparent;
+	color: #1C142D;
+
+	//text-align: center;
+	padding-left: 1.5rem;
+
+	//modifiers
+	&.button--big {
+		max-width: 100%;		
+	}
+	&.button--white {
+		color: #E2DEEB;
+		border-color: #E2DEEB;
+	}
+
+	@media all and (min-width: $breakpoint_tablet + 1px) {
+		&:hover {
+			background: $orange;
+			border-color: $orange;
+			color: #E2DEEB;
+			padding-left: 2.5rem;
+		}
+	}
+	@media all and (max-width: $breakpoint_mobile) {
+		padding: 0 1rem;
+	}
+	@media all and (max-width: 480px) {
+		//height: 3em;
+		max-width: 100%;
+		// justify-content: flex-start;
+		// padding-left: 2rem;
+	}
+}

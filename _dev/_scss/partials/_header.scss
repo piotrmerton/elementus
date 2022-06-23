@@ -1,0 +1,114 @@
+//block
+
+.header-top {
+	width: 100%;
+	position: fixed;
+	z-index: 99;
+	top: 0;
+	
+
+	display: flex;
+	align-items: center;
+
+	background: #2c2249;
+	transition: all .2s ease-in-out;
+
+	//elements
+
+	.header__section {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;	
+		min-height: 5rem;	
+		transition: padding .2s ease-in-out;
+	}
+
+	.header__logo {
+		display: block;
+		width: 166px;
+		height: 24px;
+		.logo {
+			fill: $white;
+		}
+		@media all and(min-width: $breakpoint_tablet + 1px) {
+			&:hover {
+				.logo {
+					fill: $orange;
+				}
+			}
+		}	
+	}
+
+	.header__nav {
+		flex-shrink: 0;
+		a {
+			color: $white;
+		}
+	}
+
+
+	/** modifiers **/
+
+	//page has banner (i.e. index)
+	&.header--transparent {
+		background: transparent;
+		@media all and (min-width: $breakpoint_tablet-portrait) {
+			&:not(.header--fixed) {
+				.header__section {
+					padding: 3rem 0;
+				}		
+
+				@media all and (min-width: $breakpoint_hd + 1px) {
+					.header__logo {
+						width: 290px;
+						height: 42px;					
+					}
+				}
+
+			}
+			&.header--open {
+				//height: auto;
+				//padding: 3.5rem 0;				
+			}
+		}
+
+
+	}
+	//dynamic modifiers added via JS events
+	&.header--fixed,
+	&.header--open {
+		background: #2c2249;
+	}
+
+	@media all and (min-width: $breakpoint_mobile + 1px) {
+
+		.header__layout {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.header__ui {
+			display: none;
+		}
+		.header__nav {
+			.nav__contact {
+				display: none;
+			}
+		}
+	}
+	@media all and (max-width: $breakpoint_mobile) {
+		.header__logo {
+			width: 166px;
+			height: 24px;			
+		}
+		.header__logo,
+		.header__ui {
+			position: relative;
+			z-index: 99; //above fixed header__nav
+		}
+	}
+
+}
+

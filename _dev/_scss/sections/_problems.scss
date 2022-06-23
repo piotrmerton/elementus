@@ -1,0 +1,109 @@
+.section-problems {
+	background: $white;
+
+	.section__header {
+		h2,
+		h3 {
+			margin: 0;
+		}
+	}
+
+	.section__grid {
+		display: grid;
+		.grid__item {
+			&.item--text {
+				position: relative;
+				z-index: 2; //above cover animation
+			}			
+		}
+	}
+
+	@media all and (min-width: $breakpoint_mobile + 1px) {
+		.section__header {
+			margin-bottom: 4rem;
+		}
+		.section__grid {
+			grid-column-gap: 3rem;
+			.grid__item {
+				&:nth-child(3) {		
+					align-self: center;			
+					grid-column-start: 3;
+					h3,
+					p {
+						padding-left: 2rem;
+						max-width: 100%;
+						@media all and (min-width: $breakpoint_hd) {
+							padding-left: 6rem;							
+						}			
+						@media all and (min-width: $viewport_width) {
+							padding-left: 7rem;
+						}										
+					}
+				}				
+			}
+		}
+	}
+	@media all and (min-width: $breakpoint_hd + 1px) {
+		.section__header {
+			margin-bottom: 8rem;
+		}
+	}
+	@media all and (min-width: $breakpoint_mobile + 1px) and (max-width: $breakpoint_hd) {
+		.section__grid {
+			grid-template-columns: 2fr 3fr 2fr;
+			grid-column-gap: 2rem;
+		}
+	}	
+	@media all and (min-width: $breakpoint_tablet-portrait) and (max-width: $breakpoint_tablet)  {
+		.section__features {
+			.features__list {
+				grid-template-columns: 1fr 1fr;
+			}
+		}
+	}	
+
+	@media all and (min-width: $breakpoint_tablet-portrait) and (max-width: $breakpoint_mobile) {
+		.section__header {
+			.header__grid {
+				grid-row-gap: 3rem;
+			}
+		}
+		.section__grid {
+			grid-template-columns: 1fr 1fr;
+			.grid__item {
+				&:nth-child(1) {
+					grid-column: 1 / -1;
+					margin-bottom: 2rem;
+					.content__list {
+						display: grid;
+						grid-template-columns: 1fr 1fr;
+						grid-gap: 2rem 2rem;
+						.list__item {
+							margin: 0;
+						}						
+					}
+				}
+				&:nth-child(3) {
+					display: grid;
+					align-content: center;
+				}
+			}
+		}
+	}
+
+	@media all and (max-width: $breakpoint_mobile) { 
+		.section__header {
+			margin-bottom: 3rem;
+		}
+
+		.animation-wrapper {
+			position: relative;
+			//maintain 1:1 aspect ratio
+			padding-bottom: 100%;
+			* {
+				object-fit: contain;
+			}			
+		}
+	}
+
+}

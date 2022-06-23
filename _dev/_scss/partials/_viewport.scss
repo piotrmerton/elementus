@@ -1,0 +1,25 @@
+//generic viewport class constraining content width, applied to section__body etc, treat it as "container", or "wrapper" class
+
+.viewport {
+	width: 100%;
+	max-width: $viewport_width;
+	margin: 0 auto;
+	
+	@media all and (max-width: $viewport_width) {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+	@media all and (max-width: $breakpoint_mobile) and (min-width: $breakpoint_tablet-portrait) {
+		padding-left: 3rem;
+		padding-right: 3rem;
+	}
+	@media all and (max-width: $breakpoint_tablet-portrait - 1px) {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+			
+	&.viewport--article {
+		max-width: 70rem;
+	}				
+}
+

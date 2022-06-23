@@ -1,0 +1,113 @@
+//generic form elements
+
+//input's placeholder
+::-webkit-input-placeholder { /* Edge */
+    color: $navy;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $navy;
+}
+
+::placeholder {
+    color: $navy;
+}
+
+input,
+select,
+textarea {
+	font-family: 'F37 Bolton Light';
+	font-size: 1.125em;
+	background: transparent;
+
+	color: $navy;
+	border: 1px solid $navy;
+
+	padding-left: 1rem;
+	padding-right: 1rem;
+
+	width: 100%;
+
+	-webkit-appearance: none;
+	border-radius: 0;
+	vertical-align: bottom;
+
+	@media all and (max-width: $breakpoint_mobile) {
+		font-size: 1em;
+	}
+}
+textarea {
+	padding: 1rem;
+	min-height: 10rem;
+}
+
+input,
+select {
+	display: inline-block;
+	height: 3.5rem;
+}
+
+
+form {
+
+	&:not(.form--newsletter) {
+		input,
+		select,
+		textarea {
+			border-bottom: 0;
+		}
+		.button {
+			max-width: 100%;
+		}		
+	}
+
+	&.form--newsletter {
+		@media all and (min-width: $breakpoint_hd + 1px) {
+			fieldset {
+				//not sure whether bug or "by design", but as of 12-2018 fieldset still, for some reason, can't be neither flex nor grid..
+				> div {
+					display: flex;
+				}
+			}
+			input {
+				border-right: 0;
+			}			
+			button {
+				max-width: 15rem;
+			}						
+		}		
+		@media all and (max-width: $breakpoint_hd) {
+			input,
+			select,
+			textarea {
+				border-bottom: 0;
+			}
+			.button {
+				max-width: 100%;
+			}			
+		}
+	}
+	&.form--white {
+
+		::-webkit-input-placeholder {
+		    color: $white;
+		}
+
+		:-ms-input-placeholder { 
+		    color: $white;
+		}
+
+		::placeholder {
+		    color: $white;
+		}
+
+
+		input,
+		select,
+		textarea {
+			color: $white;
+			border-color: $white;
+		}
+
+	}
+}

@@ -1,0 +1,201 @@
+.text--center {
+	text-align: center;
+}
+.text--white,
+.text--white * {
+	color: #E2DEEB;
+}
+
+@mixin list() {
+	content: '';
+	display: block;
+	width: 1.5rem;
+	height: 1px;
+	background: #1C142D;
+	margin-right: 1rem;
+	flex-shrink: 0;
+	flex-grow: 0;
+}
+
+
+.text--rich {
+
+	h1 {
+		font-size: 2.625em;
+		margin-bottom: 4rem;
+
+		@media all and (max-width: $breakpoint_mobile) {
+			font-size: 2em;
+			margin-bottom: 2rem;
+		}
+	}
+	h2 {
+		font-size: 1.875em;
+		margin-bottom: 2rem;
+		@media all and (max-width: $breakpoint_mobile) {
+			font-size: 1.5em;
+		}
+	}
+	h3 {
+		font-size: 1.5em;
+		margin-bottom: 2rem;
+		@media all and (max-width: $breakpoint_mobile) {
+			font-size: 1.375em;
+		}		
+	}
+	h4 {
+		font-size: 1.125em;
+		text-transform: none;
+		letter-spacing: normal;
+		margin-bottom: 2rem;
+	}
+	h5 {
+		font-size: .875em;
+		text-transform: uppercase;
+		letter-spacing: .05em;
+	}
+
+	p,
+	q {
+		display: block;
+		margin-bottom: 1em;
+	}
+	p,
+	q,
+	li {
+		font-family: 'F37 Bolton Light';
+		font-size: 1.063em;
+		line-height: 1.42;
+		@media all and (max-width: $breakpoint_mobile) {
+			line-height: 1.5;
+		}
+		@media all and (max-width: 480px) {
+			font-size: 1em;
+		}
+	}
+
+	mark {
+		display: flex;
+		align-items: center;
+		background: transparent;
+		text-transform: uppercase;
+		letter-spacing: .05em;
+		font-size: .875em;
+		margin: 1rem 0;
+		&:before {
+			@include list();
+		}
+	}
+
+	//lists
+	ul,
+	ol {
+		margin-bottom: 16px;
+	}
+	ol {
+		list-style-type: decimal;
+	}
+
+	ul {
+		> li {
+			display: flex;
+			align-items: center;
+			line-height: 175%;
+			&:before {
+				@include list();
+			}
+			&:not(:last-child) {
+				margin-bottom: .5em;
+			}
+		}
+	}
+
+	a {
+		color: $purple;
+		text-decoration: underline;
+		@media all and (min-width: $breakpoint_tablet + 1px) {
+			&:hover {
+				color: $orange;
+			}
+		}
+	}
+
+	figure {
+		margin: 4rem 0;
+		img {
+			width: auto;
+			max-width: 100%;
+			margin-bottom: 2rem;
+		}
+		figcaption {
+			font-family: 'F37 Bolton Light';
+			font-size: 1.063em;		
+			color: #8c8c8c;	
+		}
+		@media all and (max-width: $breakpoint_mobile) {
+			margin: 3rem 0;
+			figcaption {
+				font-size: .875em;
+			}
+		}
+	}
+
+	//<section>
+	.text__block {
+		margin-bottom: 8rem;
+		@media all and (max-width: $breakpoint_mobile) {
+			margin-bottom: 4rem;
+		}
+		&.block--synopsis {
+			font-size: 1.25em;
+		}
+	}
+
+	.text__cover {
+		img {
+			width: 100%;
+		}
+	}
+
+	//modifiers
+
+	&.text--white {
+		ul {
+			> li {
+				&:before {
+					background: #E2DEEB;
+				}
+			}
+		}
+		mark {
+			&:before {
+				background: #E2DEEB;
+			}
+		}
+	}
+
+	//single blog post
+	&.text--article {
+		@media all and (min-width: $breakpoint_mobile + 1px) {
+			p {
+				margin-bottom: 2rem;
+			}
+			p,
+			li {
+				font-size: 1.188em;
+				line-height: 175%;			
+			}
+			ul {
+				> li {
+					&:before {
+						width: 2rem;
+						margin-right: 4rem;
+					}
+					&:not(:last-child) {
+						margin-bottom: 1rem;
+					}
+				}
+			}
+		}
+	}
+}
